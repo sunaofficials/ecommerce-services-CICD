@@ -52,7 +52,8 @@ pipeline {
         cd ecommerce-gitops
 
         sed -i 's|image:.*|image: ${IMAGE_NAME}:${IMAGE_TAG}|' frontend/deployment.yaml
-
+        git config --global user.email "santanu.nayak@harman.com"
+        git config --global user.name "sunaofficilas"
         git add frontend/deployment.yaml
         git commit -m "Update frontend image to ${IMAGE_TAG}"
         git push
