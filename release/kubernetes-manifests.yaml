@@ -804,7 +804,7 @@ spec:
   ports:
   - name: http
     port: 80
-    targetPort: 3000
+    targetPort: 3333
 ---
 apiVersion: v1
 kind: ServiceAccount
