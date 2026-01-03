@@ -732,12 +732,12 @@ spec:
             readOnlyRootFilesystem: true
           image: us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.4
           ports:
-          - containerPort: 3333
+          - containerPort: 8080
           readinessProbe:
             initialDelaySeconds: 10
             httpGet:
               path: "/_healthz"
-              port: 3333
+              port: 8080
               httpHeaders:
               - name: "Cookie"
                 value: "shop_session-id=x-readiness-probe"
@@ -745,13 +745,13 @@ spec:
             initialDelaySeconds: 10
             httpGet:
               path: "/_healthz"
-              port: 3333
+              port: 8080
               httpHeaders:
               - name: "Cookie"
                 value: "shop_session-id=x-liveness-probe"
           env:
           - name: PORT
-            value: "3333"
+            value: "8080"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
             value: "productcatalogservice:3550"
           - name: CURRENCY_SERVICE_ADDR
